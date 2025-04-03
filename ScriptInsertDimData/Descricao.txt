@@ -1,0 +1,17 @@
+O script que vamos desenvolver precisa realizar a inserção de informações em uma tabela de BI chamada 'DimData' de forma automatizada, da qual iremos informar apenas uma data início e fazer com que o script realize o insert até a data atual, contendo as seguintes colunas:
+  - DtCompleta (date)
+  - AnoMes (varchar(6)) ex: 202001
+  - Ano (varchar(4))
+  - Mes (varchar(2))
+  - Dia (varchar(2))
+  - DiaSemana (varchar(15)) em extenso
+  - NumSemana (tinyint) numero da semana do ano
+  - Feriado (varchar(1)) S/N
+  - DiaUtil (varchar(1)) S/N
+  - DescMes (varchar(15))
+  - Trimestre (varchar(2)) ex: T1
+  - Semestre (varchar(2)) ex: S1
+  - Quinzena (varchar(2)) ex: Q1
+  - DiasUteisMes (tinyint)
+  - DiasUteisQ1 (tinyint)
+  - DiasUteisQ2 (tinyint)
