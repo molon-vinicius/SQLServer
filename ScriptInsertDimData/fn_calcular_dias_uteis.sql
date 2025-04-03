@@ -1,4 +1,4 @@
-create function fn_calcular_dias_uteis (@data date, @tipo tinyint) 
+create or alter function fn_calcular_dias_uteis (@data date, @tipo tinyint) 
 /* 0 Mensal | 1 Primeira Quinzena | 2 Segunda Quinzena */
 
 returns int 
@@ -25,7 +25,7 @@ set @fim = 15
      if ( select datepart(weekday, @data)
         ) between 2 and 6
      and ( select 1
-            from feriados_nacionais with(nolock)
+            from tb_feriados_nacionais with(nolock)
            where mes_dia = right(concat('0', day(@data)),2) + '/' + right(concat('0', month(@data)),2)
         ) is null
      and ( select feriado
@@ -36,10 +36,10 @@ set @fim = 15
 
 	   set @q1 = @q1 + 1
 
-	 end
+     end
    	
      set @ini = @ini + 1
-	 set @data = dateadd(day,1,@data)
+     set @data = dateadd(day,1,@data)
 
    end
 end
@@ -60,7 +60,7 @@ set @fim = day(eomonth(@data))
      if ( select datepart(weekday, @data)
         ) between 2 and 6
      and ( select 1
-            from feriados_nacionais with(nolock)
+            from tb_feriados_nacionais with(nolock)
            where mes_dia = right(concat('0', day(@data)),2) + '/' + right(concat('0', month(@data)),2)
         ) is null
      and ( select feriado
@@ -71,10 +71,10 @@ set @fim = day(eomonth(@data))
 
 	   set @q2 = @q2 + 1
 
-	 end
+     end
    	
      set @ini = @ini + 1
-	 set @data = dateadd(day,1,@data)
+     set @data = dateadd(day,1,@data)
 
    end
 end
@@ -96,3 +96,4 @@ end
 
   return @rtn
 end
+
