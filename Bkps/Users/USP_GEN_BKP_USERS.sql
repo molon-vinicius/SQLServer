@@ -2,7 +2,7 @@ use [master]
 
 go 
 
-create or alter procedure USP_GEN_BKP_USUARIOS 
+create or alter procedure USP_GEN_BKP_USERS 
 
 as 
 
