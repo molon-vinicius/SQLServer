@@ -1,0 +1,7 @@
+The idea of these files is to elaborate procedures to generate scripts to create users.
+
+The scripts will be located in tables that could be acessed by linked server or even in the [master] data base as a backup.
+
+When necessary generate info just execute the procedure USP_GEN_BKP_USERS.
+
+Whenever you want to restore the logins just execute the procedure USP_RESTORE_BKP_USERS.
