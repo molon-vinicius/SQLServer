@@ -1,21 +1,21 @@
-/* Sequência de Fibonacci exibida em uma string concatenada */
-declare @atual   int = 1
-declare @penul   int = 0
-declare @antep   int = 0
-declare @qtd     int = 20 --quantidade de valores que será retornada
-declare @cont    int = 1
-declare @result  nvarchar(max)
+/* Fibonacci returned in a concat string */
+declare @current   int = 1
+declare @penult    int = 0
+declare @antepen   int = 0
+declare @ret       int = 20 --amount of values that will be allocated in the string
+declare @aux       int = 1
+declare @result nvarchar(max)
 
-while @cont <= @qtd
+while @aux <= @ret
 begin
 
-  select @result = concat(@result,',',@atual) 
+  select @result = concat(@result,',',@current) 
   
-  set @antep = @penul
-  set @penul = @atual   
-  set @atual = @penul + @antep
+  set @antepen = @penult
+  set @penult = @current   
+  set @current = @penult + @antepen
 
-  set @cont = @cont + 1
+  set @aux = @aux + 1
 end
 
   select substring(@result,2,len(@result))
