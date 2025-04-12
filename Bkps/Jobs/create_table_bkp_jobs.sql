@@ -4,6 +4,7 @@ create table [master].[dbo].[tb_bkp_jobs]
             , [JobName] nvarchar(200)
             , [JobEnabled] char
             , [JobDescription] nvarchar(1000)
+            , [ServerName] nvarchar(max)            
             , [InsertDate] datetime
             , [UpdateDate] datetime
             , [StartStepID] int
@@ -32,6 +33,7 @@ create table [master].[dbo].[tb_bkp_jobs_schedules]
             , [ScheduleUID] uniqueidentifier
             , [ScheduleName] varchar(200) 
             , [ScheduleEnabled] char
+            , [ServerName] nvarchar(max)                        
             , [InsertDate] datetime
             , [UpdateDate] datetime
             , [SQLCommand] nvarchar(max))
@@ -40,6 +42,7 @@ create table [master].[dbo].[tb_bkp_jobs_alerts]
            ( [AlertID] int	
            , [AlertName] nvarchar(max)	
            , [AlertEnabled] tinyint	
+           , [ServerName] nvarchar(max)                        
            , [InsertDate] datetime
            , [UpdateDate] datetime
            , [DatabaseName] nvarchar(512)	
