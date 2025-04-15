@@ -90,7 +90,6 @@ end
  set @merge_update = substring(@merge_update,0,len(@merge_update)-1)
  set @merge_insert_cols = substring(@merge_insert_cols,0,len(@merge_insert_cols)-1)
  set @merge_insert_values = substring(@merge_insert_values,0,len(@merge_insert_values)-1)
- set @merge_insert_values = replace(@merge_insert_values,'source.userID',@user)
 
  select @SQL_merge = concat(@merge_update, @merge_insert_cols, @merge_insert_values,');')
 
