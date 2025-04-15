@@ -1,0 +1,18 @@
+It's necessary to update a table of user permissions that it has the column 'userID' as reference and all the columns are permissions with the activate status (Y/N).
+
+userID | ReadMainMenu | WriteMainMenu | EditMainMenu | ...
+   1        'Y'             'Y'             'N'
+
+The source of information that it will be used to update this table is on a form in another format, with the column userID, a column defined as 'permission' and another column defined as 'active'.
+
+userID |    permission    | active
+   1      'ReadMainMenu      'Y'
+   1      'WriteMainMenu'    'Y'
+   1      'EditMainMenu'     'N'
+
+I developed a script with the idea of no needing to include or delete the columns manually if it occurs some changes, making it dynamic and practical. 
+To solve this I manipulated the data in the source table as 'unpivotTable' and compared the value of the columns using the command 'merge'.
+
+
+
+
