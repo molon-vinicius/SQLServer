@@ -11,7 +11,7 @@ userID |    permission    | active
    1      'EditMainMenu'     'N'
 
 I developed a script with the idea of no needing to include or delete the columns manually if it occurs some changes, making it dynamic and practical. 
-To solve this I manipulated the data in the source table as 'unpivotTable' and compared the value of the columns using the command 'merge'.
+To solve this I manipulated the data in the source table as 'pivotTable' and compared the value of the columns using the command 'merge'.
 
 
 
