@@ -1,5 +1,5 @@
 /*****************/
---	Jobs Failed --
+-- Jobs Failed --
 /*****************/
 
 create or alter procedure [dbo].[USP_Jobs_Failed]
