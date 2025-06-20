@@ -1,4 +1,4 @@
-CREATE OR ALTER FUNCTION dbo.fn_ConvertBytesValor
+CREATE OR ALTER FUNCTION dbo.fn_ConvertBytes
 (
     @Bytes BIGINT,
     @Un NVARCHAR(10) --'Bytes', 'KB', 'MB', 'GB', 'TB'
@@ -6,7 +6,7 @@ CREATE OR ALTER FUNCTION dbo.fn_ConvertBytesValor
 RETURNS DECIMAL(20,2)
 AS
 BEGIN
-    DECLARE @Resultado DECIMAL(20,2)
+    DECLARE @Result DECIMAL(20,2)
 
     SET @Resultado = 
         CASE WHEN UPPER(@Un) = 'BYTES' 
@@ -22,7 +22,7 @@ BEGIN
              ELSE NULL
         END
 
-    RETURN @Resultado
+    RETURN @Result
 
 END
 
