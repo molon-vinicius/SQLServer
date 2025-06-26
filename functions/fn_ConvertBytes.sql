@@ -8,7 +8,7 @@ AS
 BEGIN
     DECLARE @Result DECIMAL(20,2)
 
-    SET @Resultado = 
+    SET @Result = 
         CASE WHEN UPPER(@Un) = 'BYTES' 
              THEN CAST(@Bytes AS DECIMAL(20,2))
              WHEN UPPER(@Un) = 'KB'    
